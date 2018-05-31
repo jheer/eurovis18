@@ -1,0 +1,98 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v4.json",
+  "width": 1580,
+  "height": 880,
+  "padding": 10,
+  "autosize": "none",
+
+  "signals": [
+    {
+      "name": "curr", "value": 1000
+    },
+    {
+      "name": "size", "update": "length(data('words'))"
+    }
+  ],
+
+  "data": [
+    {
+      "name": "papers",
+      "url": "data/titles.json",
+      "transform": [
+        {
+          "type": "countpattern", "field": "title",
+          "case": "lower",
+          "pattern": "[\\w']{3,}",
+          "stopwords": "(of|the|a|an|for|and|or|with|from|using)"
+        },
+        {
+          "type": "formula", "as": "angle",
+          "expr": "[-45, 0, 45][~~(random() * 3)]"
+        }
+      ]
+    },
+    {
+      "name": "header",
+      "values": [
+        {"text": "PAPER TITLES", "count": 20, "angle": 0}
+      ]
+    },
+    {
+      "name": "words",
+      "source": ["header", "papers"],
+      "transform": [
+        {
+          "type": "wordcloud",
+          "size": [{"signal": "width"}, {"signal":"height"}],
+          "text": {"expr": "warn(datum.text)"},
+          "rotate": {"field": "angle"},
+          "font": "Roboto, Helvetica Neue, Arial",
+          "fontSize": {"field": "count"},
+          "fontSizeRange": [20, 80],
+          "padding": 4
+        },
+        {
+          "type": "window",
+          "ops": ["row_number"],
+          "as": ["index"]
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": ["#333", "#74d47c", "#337ab7"]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "text",
+      "from": {"data": "words"},
+      "encode": {
+        "enter": {
+          "text": {"field": "text"},
+          "align": {"value": "center"},
+          "baseline": {"value": "alphabetic"},
+          "fill": [
+            {"test": "datum.text === 'PAPER TITLES'", "value": "#000"},
+            {"scale": "color", "signal": "datum.index % 3"}
+          ],
+          "x": {"field": "x"},
+          "y": {"field": "y"},
+          "font": {"field": "font"},
+          "fontSize": {"field": "fontSize"},
+          "fontStyle": {"field": "fontStyle"},
+          "fontWeight": {"signal": "datum.text === 'PAPER TITLES' ? 'bold' : 'normal'"},
+          "angle": {"field": "angle"}
+        },
+        "update": {
+          "fillOpacity": {"signal": "datum.index <= curr ? 1 : 0"}
+        }
+      }
+    }
+  ]
+}

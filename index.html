@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>EuroVis 2018 Papers</title>
+    <script type="text/javascript" src="lib/d3.v5.min.js"></script>
+    <style type="text/css">
+
+body {
+  background: #000;
+  position: relative;
+  width: 1600px;
+  height: 900px;
+  margin: auto;
+  overflow: hidden;
+}
+
+iframe {
+  border: none;
+  position: absolute;
+  width: 1600px;
+  height: 900px;
+  background: #000;
+}
+
+.trans {
+  -moz-transition-property: -moz-transform, opacity;
+  -moz-transition-duration: 500ms;
+  -ms-transition-property: -ms-transform, opacity;
+  -ms-transition-duration: 500ms;
+  -webkit-transition-property: -webkit-transform, opacity;
+  -webkit-transition-duration: 500ms;
+}
+
+#next { z-index: 0; }
+#prev { z-index: 1; }
+#curr { z-index: 2; }
+
+#prev.slide {
+  opacity: 0;
+  -moz-transform: translateX(-1300px);
+  -ms-transform: translateX(-1300px);
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -1300, 0, 0, 1);
+}
+#curr.slide {
+  opacity: 1;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#next.slide {
+  opacity: 0;
+  -moz-transform: translateX(1300px);
+  -ms-transform: translateX(1300px);
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1300, 0, 0, 1);
+}
+
+#prev.fade {
+  opacity: 1;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#curr.fade {
+  opacity: 1;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+#next.fade {
+  opacity: 0;
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+    </style>
+  </head>
+  <body>
+    <iframe id="prev"></iframe>
+    <iframe id="curr"></iframe>
+    <iframe id="next"></iframe>
+    <script type="text/javascript">
+
+var slides = [
+  {uri:"slides/title.html", trans:"slide"},
+  {uri:"slides/locations.html", trans:"slide"},
+  {uri:"slides/brno.html", trans:"slide"},
+  {uri:"slides/countries.html", trans:"slide"},
+  {uri:"slides/submissions.html", trans:"slide"},
+  {uri:"slides/paper-titles.html", trans:"slide"},
+  {uri:"slides/committee.html", trans:"slide"},
+  {uri:"slides/reviewers.html", trans:"slide"}
+];
+
+var frames = d3.selectAll("iframe"),
+    prev = d3.select("#prev"),
+    curr = d3.select("#curr"),
+    next = d3.select("#next"),
+    prevIndex,
+    currIndex = +location.hash.substring(1) || 0,
+    nextIndex;
+
+resize();
+step(0);
+
+frames.attr("class", "trans slide");
+
+frames.on("load", function() {
+  d3.select(this.contentWindow).on("keydown", function() {
+    switch (d3.event.keyCode) {
+      case 39: // right arrow
+      case 32: // space
+      case 34: { // page down
+        step(+1);
+        break;
+      }
+      case 8: { // delete
+        step(d3.event.shiftKey ? +1 : -1);
+        break;
+      }
+      case 37: // left arrow
+      case 33: { // page up
+        step(-1);
+        break;
+      }
+      case 36: { // home
+        currIndex = 0;
+        step(0);
+        break;
+      }
+      case 35: { // end
+        currIndex = slides.length - 1;
+        step(0);
+        break;
+      }
+      default: return;
+    }
+    d3.event.preventDefault();
+  });
+});
+
+d3.select(window).on("resize", resize).on("hashchange", function hashchange() {
+  var that = d3.select(this).on("hashchange", null);
+  currIndex = +location.hash.substring(1);
+// TODO: fix to avoid double invocation upon keydown advance
+//  step(0);
+  that.on("hashchange", hashchange);
+});
+
+function resize() {
+  d3.select("body").style("margin-top", (window.innerHeight - 800) / 3 + "px");
+}
+
+function step(delta) {
+  var tranIndex =
+    delta > 0 ? nextIndex :
+    delta < 0 ? (prevIndex + 1) % slides.length :
+    currIndex;
+  frames.attr("class", slides[tranIndex].trans);
+  console.log(
+    prev.node().getBoundingClientRect().left,
+    curr.node().getBoundingClientRect().left,
+    next.node().getBoundingClientRect().left
+  ); // trigger reflow, print values
+
+  var temp;
+  if (delta > 0) {
+    prevIndex = currIndex;
+    currIndex = nextIndex;
+    nextIndex = nextIndex >= slides.length - 1 ? 0 : nextIndex + 1;
+    tranIndex = currIndex;
+    temp = prev;
+    prev = curr.attr("id", "prev");
+    curr = next.attr("id", "curr");
+    next = temp.attr("id", "next");
+  } else if (delta < 0) {
+    nextIndex = currIndex;
+    currIndex = prevIndex;
+    prevIndex = prevIndex <= 0 ? slides.length - 1 : prevIndex - 1;
+    tranIndex = (currIndex + 1) % slides.length;
+    temp = next;
+    next = curr.attr("id", "next");
+    curr = prev.attr("id", "curr");
+    prev = temp.attr("id", "prev");
+  } else {
+    nextIndex = currIndex >= slides.length - 1 ? 0 : currIndex + 1;
+    prevIndex = currIndex <= 0 ? slides.length - 1 : currIndex - 1;
+    tranIndex = currIndex;
+  }
+
+  frames.attr("class", "trans "+slides[tranIndex].trans);
+
+  location.hash = currIndex;
+  curr.node().src = slides[currIndex].uri;
+  setTimeout(function() {
+    prev.node().src = slides[prevIndex].uri;
+    next.node().src = slides[nextIndex].uri;
+    curr.node().contentWindow.focus();
+  }, 510);
+}
+
+    </script>
+  </body>
+</html>

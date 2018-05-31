@@ -1,0 +1,812 @@
+[
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 4.25
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 4.25
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 4
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 4
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 4
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.75
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.75
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.75
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.75
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.75
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.75
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.75
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.25
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.25
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.25
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.25
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.25
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3.25
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3
+  },
+  {
+    "decision": "Accept",
+    "type": "Algorithm",
+    "score": 3
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 4.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 4
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 4
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 3.75
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 3.75
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 3.6
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 3.2
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 3
+  },
+  {
+    "decision": "Accept",
+    "type": "Design Study",
+    "score": 2.25
+  },
+  {
+    "decision": "Accept",
+    "type": "Evaluation",
+    "score": 4
+  },
+  {
+    "decision": "Accept",
+    "type": "Evaluation",
+    "score": 3.75
+  },
+  {
+    "decision": "Accept",
+    "type": "Evaluation",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Evaluation",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "Model",
+    "score": 3
+  },
+  {
+    "decision": "Accept",
+    "type": "System",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "System",
+    "score": 3.5
+  },
+  {
+    "decision": "Accept",
+    "type": "System",
+    "score": 3
+  },
+  {
+    "decision": "Fast-Track",
+    "type": "Algorithm",
+    "score": 2.75
+  },
+  {
+    "decision": "Fast-Track",
+    "type": "Model",
+    "score": 3
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 3.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 3.2
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 3
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 3
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 3
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 1.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Algorithm",
+    "score": 1.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 3.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 3.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 3
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 3
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 3
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.4
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.4
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 1.8
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 1.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 1.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 1.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 1.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 1.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 1.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Design Study",
+    "score": 1
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 3.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 3
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 3
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.4
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Evaluation",
+    "score": 2
+  },
+  {
+    "decision": "Reject",
+    "type": "Model",
+    "score": 3.25
+  },
+  {
+    "decision": "Reject",
+    "type": "Model",
+    "score": 3
+  },
+  {
+    "decision": "Reject",
+    "type": "Model",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "System",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "System",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "System",
+    "score": 2.75
+  },
+  {
+    "decision": "Reject",
+    "type": "System",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "System",
+    "score": 2.5
+  },
+  {
+    "decision": "Reject",
+    "type": "System",
+    "score": 2.25
+  },
+  {
+    "decision": "Reject",
+    "type": "System",
+    "score": 1.75
+  }
+]

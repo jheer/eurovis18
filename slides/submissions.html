@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <script src="../lib/d3.v5.min.js"></script>
+    <script src='../vis/submissions.js'></script>
+    <style>
+      * {
+        font-family: 'Roboto';
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="vis"></div>
+  </body>
+  <script>
+subvis.initialize('#vis', 1600, 900);
+
+const methods = [
+  'toBubble',
+  'toTypes',
+  'toScores',
+  'toDecision',
+  'toTypes'
+];
+
+let currIndex = 0,
+    nextIndex = 0;
+
+d3.select('body').on('keydown', function(event) {
+  var code = d3.event.keyCode;
+  nextIndex = currIndex;
+  switch (code) {
+    case 40:
+      nextIndex = Math.min(methods.length - 1, currIndex + 1);
+      break;
+    case 38:
+      nextIndex = Math.max(0, currIndex - 1);
+      break;
+    default:
+      return;
+  }
+  if (nextIndex !== currIndex) {
+    currIndex = nextIndex;
+    subvis[methods[currIndex]]();
+  }
+  d3.event.preventDefault();
+});
+  </script>
+</html>

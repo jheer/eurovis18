@@ -1,0 +1,141 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v4.json",
+  "width": 1600,
+  "height": 900,
+  "autosize": "none",
+
+  "encode": {
+    "update": {
+      "fill": {"signal": "background"}
+    }
+  },
+
+  "signals": [
+    {
+      "name": "Year", "value": 1999,
+      "bind": {
+        "input": "range", "element": "#year",
+        "min": 1999, "max": 2018, "step": 1
+      }
+    },
+    { "name": "type", "value": "albers" },
+    { "name": "scale", "value": 1200 },
+    { "name": "rotate0", "value": -15 },
+    { "name": "rotate1", "value": 0 },
+    { "name": "rotate2", "value": 0 },
+    { "name": "center0", "value": 0 },
+    { "name": "center1", "value": 49 },
+    { "name": "translate0", "update": "width / 2" },
+    { "name": "translate1", "update": "height / 2" },
+
+    { "name": "graticuleDash", "value": 0 },
+    { "name": "borderWidth", "value": 1 },
+    { "name": "background", "value": "#68d" },
+    { "name": "fill", "value": "#eee" },
+    { "name": "textColor", "value": "#000" },
+    { "name": "invert", "value": false }
+  ],
+
+  "projections": [
+    {
+      "name": "projection",
+      "type": {"signal": "type"},
+      "scale": {"signal": "scale"},
+      "rotate": [
+        {"signal": "rotate0"},
+        {"signal": "rotate1"},
+        {"signal": "rotate2"}
+      ],
+      "center": [
+        {"signal": "center0"},
+        {"signal": "center1"}
+      ],
+      "translate": [
+        {"signal": "translate0"},
+        {"signal": "translate1"}
+      ]
+    }
+  ],
+
+  "data": [
+    {
+      "name": "world",
+      "url": "data/world-50m.json",
+      "format": {
+        "type": "json"
+      }
+    },
+    {
+      "name": "cities",
+      "url": "data/cities.csv",
+      "format": {"type": "csv", "parse": "auto"},
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["lon", "lat"]
+        },
+        {
+          "type": "filter",
+          "expr": "datum.year <= Year"
+        }
+      ]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "shape",
+      "from": {"data": "world"},
+      "encode": {
+        "update": {
+          "stroke": {"value": "#888"},
+          "strokeWidth": {"value": 0.5},
+          "fill": {"signal": "fill"}
+        }
+      },
+      "transform": [
+        { "type": "geoshape", "projection": "projection" }
+      ]
+    },
+    {
+      "type": "symbol",
+      "from": {"data": "cities"},
+      "encode": {
+        "enter": {
+          "fill": {"value": "firebrick"},
+          "stroke": {"value": "#333"},
+          "strokeWidth": {"value": 0.5}
+        },
+        "update": {
+          "x": {"field": "x"},
+          "y": {"field": "y"},
+          "size": {"signal": "datum.year === Year ? 1800 : (datum.revisit ? 1200 : 800)"},
+          "fillOpacity": {"signal": "datum.year === Year ? 0.8 : 0.3"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "cities"},
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "align": {"value": "left"},
+          "baseline": {"value": "middle"},
+          "fill": {"signal": "textColor"},
+          "font": {"value": "Roboto, Helvetica Neue"},
+          "fontWeight": {"value": "bold"},
+          "fontSize": {"value": 24},
+          "text": {"signal": "datum.city + ' - ' + datum.year"}
+        },
+        "update": {
+          "x": {"field": "x"},
+          "dx": {"signal": "datum.revisit ? 30 : 25"},
+          "y": {"field": "y"},
+          "fillOpacity": {"signal": "datum.year === Year ? 1 : 0"}
+        }
+      }
+    }
+  ]
+}

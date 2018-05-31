@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <script src="../lib/d3.v5.min.js"></script>
+    <script src="../lib/vega.js"></script>
+    <script src="../lib/vega-projections.js"></script>
+    <style>
+      * {
+        font-family: Roboto;
+        color: black;
+        font-size: 28px;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .caption {
+        position: absolute;
+        bottom: 100px;
+        width: 100vw;
+        text-align: center;
+        font-size: 56px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="vis"></div>
+    <div class="caption">Author Home Countries</div>
+  </body>
+  <script>
+let view = null;
+d3.json('../vis/countries.vg.json')
+  .then(spec => {
+    view = new vega.View(vega.parse(spec), {
+      loader:   vega.loader({baseURL: '../'}),
+      logLevel: vega.Warn,
+      renderer: 'svg'
+    }).initialize('#vis').hover().run();
+  })
+  .catch(error => { console.error(error); });
+
+d3.select('body').on('keydown', function(event) {
+  var code = d3.event.keyCode;
+  switch (code) {
+    case 40:
+      view.signal('year', Math.min(2018, view.signal('year') + 1));
+      break;
+    case 38:
+      view.signal('year', Math.max(1999, view.signal('year') - 1));
+      break;
+    default:
+      return;
+  }
+  view.run();
+  d3.event.preventDefault();
+});
+  </script>
+</html>

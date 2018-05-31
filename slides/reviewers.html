@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <script src="../lib/d3.v5.min.js"></script>
+    <script src="../lib/vega.js"></script>
+    <style>
+      * {
+        font-family: Roboto;
+        color: black;
+        font-size: 28px;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: white;
+      }
+      svg text {
+        transition: fill-opacity 0.25s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="vis"></div>
+  </body>
+  <script>
+let view = null;
+d3.json('../vis/reviewers.vg.json')
+  .then(spec => {
+    view = new vega.View(vega.parse(spec), {
+      loader:   vega.loader({baseURL: '../'}),
+      logLevel: vega.Warn,
+      renderer: 'svg'
+    }).initialize('#vis').run();
+
+    view.signal('curr', 0).run();
+    const maxIndex = 225;
+
+    let timer = d3.interval(function() {
+      const nextIndex = view.signal('curr') + 1;
+      if (nextIndex > maxIndex) {
+        timer.stop();
+      } else {
+        view.signal('curr', nextIndex).run();
+      }
+    });
+  })
+  .catch(error => { console.error(error); });
+
+d3.select('body').on('keydown', function(event) {
+  var code = d3.event.keyCode;
+  switch (code) {
+    case 40:
+      //
+      break;
+    case 38:
+      //
+      break;
+    default:
+      return;
+  }
+  d3.event.preventDefault();
+});
+  </script>
+</html>

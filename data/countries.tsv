@@ -1,0 +1,46 @@
+country	decision	count	latitude	longitude
+Sweden	Fast-Track	1	66.2188	19
+Sweden	Reject	3	66.2188	19
+Russian Federation	Reject	2	64.736	104.062
+Finland	Reject	1	62.716	26.192
+Norway	Accept	1	61.3701	9.3031
+Canada	Accept	5	59.2067	-111.1937
+Canada	Reject	5	59.2067	-111.1937
+Denmark	Accept	1	56.113	9.096
+Denmark	Reject	1	56.113	9.096
+Ireland	Reject	2	53.214	-7.588
+United Kingdom	Accept	2	52.289	-1.259
+United Kingdom	Reject	13	52.289	-1.259
+Netherlands	Accept	2	52.1704	5.0102
+Netherlands	Reject	6	52.1704	5.0102
+Germany	Accept	15	51.3819	9.9877
+Germany	Fast-Track	2	51.3819	9.9877
+Germany	Reject	35	51.3819	9.9877
+Belgium	Reject	1	50.6745	4.4588
+Luxembourg	Reject	1	49.671	6.113
+Austria	Accept	6	47.65	14.705
+Austria	Reject	5	47.65	14.705
+Hungary	Accept	1	47.174	19.618
+Switzerland	Accept	1	46.7794	8.0329
+Switzerland	Reject	4	46.7794	8.0329
+France	Accept	2	46.656	2.543
+France	Reject	4	46.656	2.543
+Italy	Reject	2	44.3713	11.1084
+Portugal	Reject	2	40.957	-7.9373
+Spain	Accept	2	40.617	-3.388
+Spain	Reject	5	40.617	-3.388
+United States	Accept	23	40.0792	-98.8164
+United States	Reject	33	40.0792	-98.8164
+Korea, Republic of	Accept	1	36.338	128.16
+Japan	Accept	1	35.962	137.855
+Japan	Reject	1	35.962	137.855
+China	Accept	1	35.1753	99.3877
+China	Reject	9	35.1753	99.3877
+India	Reject	2	22.741	78.236
+Hong Kong	Accept	1	22.436	114.099
+Hong Kong	Reject	2	22.436	114.099
+Thailand	Reject	1	15.688	100.845
+Brazil	Accept	2	-11.694	-48.978
+Brazil	Reject	4	-11.694	-48.978
+Australia	Accept	2	-24.578	133.582
+Australia	Reject	1	-24.578	133.582

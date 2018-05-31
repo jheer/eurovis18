@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <script src="../lib/d3.v5.min.js"></script>
+    <script src="../lib/vega.js"></script>
+    <style>
+      * {
+        font-family: Roboto;
+        color: black;
+        font-size: 28px;
+      }
+      body {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+      }
+      #vis {
+        padding: 0;
+        margin: 0;
+        height: 900px;
+        max-height: 900px;
+      }
+      .vega-bind input {
+        width: 300px;
+      }
+      .vega-bind span {
+        margin-right: 0.5em;
+      }
+      .vega-bind label {
+        margin-left: 0.5em;
+      }
+      #year {
+        position: absolute;
+        z-index: 1;
+        text-align: center;
+        width: 100vw;
+        bottom: 100px;
+      }
+      #caption {
+        position: absolute;
+        z-index: 1;
+        left: 50px;
+        top: 120px;
+        font-size: 64px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="vis"></div>
+    <div id="year"></div>
+    <div id="caption">20 Years of EuroVis!</div>
+  </body>
+  <script>
+const YEAR = 'Year';
+let view = null;
+d3.json('../vis/locations.vg.json')
+  .then(spec => {
+    view = new vega.View(vega.parse(spec), {
+      loader:   vega.loader({baseURL: '../'}),
+      logLevel: vega.Warn,
+      renderer: 'svg'
+    }).initialize('#vis').run();
+  })
+  .catch(error => { console.error(error); });
+
+d3.select('body').on('keydown', function(event) {
+  var code = d3.event.keyCode;
+  switch (code) {
+    case 40:
+      view.signal(YEAR, Math.min(2018, view.signal(YEAR) + 1));
+      break;
+    case 38:
+      view.signal(YEAR, Math.max(1999, view.signal(YEAR) - 1));
+      break;
+    default:
+      return;
+  }
+  view.run();
+  d3.event.preventDefault();
+});
+  </script>
+</html>

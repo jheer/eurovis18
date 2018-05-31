@@ -1,0 +1,81 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v4.json",
+  "width": 1580,
+  "height": 880,
+  "padding": 10,
+  "autosize": "none",
+
+  "signals": [
+    {
+      "name": "curr", "value": 72
+    }
+  ],
+
+  "data": [
+    {
+      "name": "people",
+      "url": "data/committee.tsv",
+      "format": {"type": "tsv", "parse": "auto"},
+      "transform": [
+        {
+          "type": "formula", "as": "angle",
+          "expr": "datum.name === 'COMMITTEE' ? 0 : -20"
+        },
+        {
+          "type": "wordcloud",
+          "size": [{"signal": "width"}, {"signal":"height"}],
+          "text": {"field": "name"},
+          "rotate": {"field": "angle"},
+          "font": "Roboto, Helvetica Neue, Arial",
+          "fontSize": {"expr": "datum.name === 'COMMITTEE' ? 100 : 36"},
+          "fontWeight": {"expr": "datum.name === 'COMMITTEE' ? 'bold' : 'normal'"},
+          "padding": 4
+        },
+        {
+          "type": "window",
+          "ops": ["row_number"],
+          "as": ["index"]
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "range": ["#74d47c", "#333", "#337ab7"]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "text",
+      "from": {"data": "people"},
+      "encode": {
+        "enter": {
+          "text": {"field": "name"},
+          "align": {"value": "center"},
+          "baseline": {"value": "alphabetic"},
+          "fill": [
+            {"test": "datum.name === 'COMMITTEE'", "value": "#000"},
+            {"scale": "color", "field": "name"}
+          ],
+          "x": {"field": "x"},
+          "y": {"field": "y"},
+          "font": {"field": "font"},
+          "fontSize": [
+            {"test": "datum.name === 'COMMITTEE'", "value": 80},
+            {"field": "fontSize"}
+          ],
+          "fontStyle": {"field": "fontStyle"},
+          "fontWeight": {"field": "fontWeight"},
+          "angle": {"field": "angle"}
+        },
+        "update": {
+          "fillOpacity": {"signal": "datum.index <= curr ? 1 : 0"}
+        }
+      }
+    }
+  ]
+}
